@@ -1,0 +1,6 @@
+Struct
+  -> names (nomes dos subcampos)
+  -> data
+	-> 155 time points
+	-> 58 subcampos
+	-> 20 indivíduos
