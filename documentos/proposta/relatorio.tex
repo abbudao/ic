@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{geometry}
+\usepackage{tikz}
+\begin{document}
+\input{capa.tex}
+\titleGP
+\newpage
+\section*{Introdução}
+A humanidade está permanentemente em busca dos detalhes de funcionamento do cérebro humano. Para auxiliar nesta difícil tarefa, diversas técnicas de Neuroimagiologia\footnote{e.g.\ Eletroencefalografia (\emph{EEG}), Tomografia por emissão de positrões (\emph{PET}), et al.\ } foram desenvolvidas no último século, possibilitando também diagnósticos rápidos e precisos de até mesmo doenças incomuns.
+
+As técnicas de Neuroimagiologia são divididas em duas categorias; técnicas estruturais e técnicas funcionais. As técnicas estruturais têm como objetivo definir a estrutura do sistema nervoso e o diagnóstico de doenças intracranianas de larga escala. Para isso contam com uma elevada resolução espacial, porém possuem uma baixa resolução temporal. No caso das técnicas funcionais, estas são mais adequadas para o estudo cognitivo do cérebro pois contém uma alta resolução temporal, ao custo de uma resolução espacial mais baixa.
+
+
+Nas últimas duas décadas, uma técnica funcional não invasiva em específico têm se tornado predominante em estudos cognitivos por apresentar um ótimo balanço entre resolução espacial e resolução temporal,técnica chamada de Ressonância Magnética Funcional ou em inglês, Functional Magnetic Resonance Imaging (\emph{fMRI}). 
+\begin{figure}[htpb]
+  \centering
+  \input{brain.tikz}
+  \caption{Representação de Voxels distribuídos em um cérebro}
+  \label{fig:1}
+\end{figure}
+
+Descoberta por Seiji Ogawa \cite{ogawa1990brain}, a variação mais comum da técnica, chamada BOLD fMRI, consiste em medir a razão entre hemoglobinas oxigenadas e desoxigenadas ao longo de um período. Esta medida é relevante pois está atrelada ao consumo metabólico dos neurônios, que é um efeito colateral da ativação dos mesmos, efeito o qual se deseja estudar. Dividimos então o cérebro em diminutas unidades de volumes, chamadas de Voxels, e estudamos como varia este sinal ao longo do tempo, o que nos resulta em um problema de análise de múltiplas séries no tempo.
+
+Tipicamente, em um experimento deseja-se inferir algo ou testar certa hipótese. A abordagem mais natural é ao realizar o experimento comparar um estado de repouso e um estado que supostamente provoca a ativação de interesse, assim possibilitando analisar como e em que Voxels o sinal varia, prosseguindo com cautela com inferências estatísticas que refutam ou concordam com a hipótese que deseja-se testar.
+
+Após a amostragem das séries no tempo de cada Voxel, é possível reconstruir imagens que nos sugerem a ativação de certas partes do cérebro. É possível também, fazer uso de técnicas estruturais, com alta resolução especial, para localizar e rotular subcampos do cérebro antes de realizar nossa análise. Esta análise e preparação do experimento exige profisisonais dos mais diversos campos do conhecimento como Psicólogos, Médicos e Engenheiros, entre outros, assim como pessoas com múltiplas \emph{expertises} que consiga conectar estes diversos campos. A fim de tornar esta análise mais fácil de ser realizada, propõe-se a criação de um software capaz de reconstruir estas imagens de forma eficiente e acessível, de modo que possibilite esta multitude de profissionais, muitas vezes sem conhecimento na área de computação, consiga fazer parte ativa da consolidação e análise destes dados.
+
+\section*{Materiais e Métodos}
+
+O LPS, Laboratório de Processamento de Sinais, localizado na Escola de Engenharia de São Carlos (Universidade de São Paulo), firmou uma parceria com a University de Pittsburgh, Pensilvânia, para um estudo que envolvia \emph{fMRI}; O estudo modela a conectividade dos subcampos do Hippocampo com Redes Bayesianas, um modelo probabilístico usado para traçar inferências acerca de incertezas. Tal parceria culminou na tese de Doutorado, do agora Doutor, Fernando Santos Pasquini \cite{Santos2017}. Planeja-se utilizar destes dados coletados no projeto mencionado para construir e validar o programa de reconstrução de imagens.
+
+A linguagem de programação escolhida para o projeto foi Python, pois possibilita uma prototipação rápida, assim como possuí uma vasta gama de repositórios e pacotes para análise de dados.
+
+\section*{Resultados esperados}
+Desenvolver um software robusto para reconstrução de imagens de \emph{fMRI} que contenha uma interface gráfica simples e intuitiva. Tal aplicação almeja ser um framework para desenvolvimento de análise de dados \emph{fMRI} que facilite e possibilite a conclusão a cerca da validade de inferências sobre hipóteses traçadas.
+
+\bibliographystyle{abbrv}
+\bibliography{refs}
+\end{document}

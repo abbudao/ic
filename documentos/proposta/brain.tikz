@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+  \input{cube.tex}
+
+\node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.6\textwidth]{brain.eps}};
+\tikzcuboid{%
+    shiftx=4.3cm,%
+    shifty=3cm,%
+    scale=1.67,%
+    rotation=0,%
+    densityx=3,%
+    densityy=3,%
+    densityz=3,%
+    dimx=3,%
+    dimy=3,%
+    dimz=3,%
+    scalex=1,%
+    scaley=1,%
+    scalez=1,%
+    anglex=-25,%
+    angley=90,%
+    anglez=210,%
+  front/.style={draw=black,fill=white,opacity=0.3},
+  top/.style={draw=black,fill=white,opacity=0.3},
+  right/.style={draw=black,fill=white,opacity=0.3}
+  } at (0,0);
+\end{tikzpicture}
