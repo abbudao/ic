@@ -1,4 +1,49 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{bullmore2009complex}
+E.~Bullmore and O.~Sporns.
+\newblock Complex brain networks: graph theoretical analysis of structural and
+  functional systems.
+\newblock {\em Nature Reviews Neuroscience}, 10(3):186--198, 2009.
+
+\bibitem{cabeza2000imaging}
+R.~Cabeza and L.~Nyberg.
+\newblock Imaging cognition ii: An empirical review of 275 pet and fmri
+  studies.
+\newblock {\em Journal of cognitive neuroscience}, 12(1):1--47, 2000.
+
+\bibitem{cox2003functional}
+D.~D. Cox and R.~L. Savoy.
+\newblock Functional magnetic resonance imaging (fmri)“brain reading”:
+  detecting and classifying distributed patterns of fmri activity in human
+  visual cortex.
+\newblock {\em Neuroimage}, 19(2):261--270, 2003.
+
+\bibitem{faro2010bold}
+S.~H. Faro and F.~B. Mohamed.
+\newblock {\em BOLD fMRI: A guide to functional imaging for neuroscientists}.
+\newblock Springer Science \& Business Media, 2010.
+
+\bibitem{friston1996movement}
+K.~J. Friston, S.~Williams, R.~Howard, R.~S. Frackowiak, and R.~Turner.
+\newblock Movement-related effects in fmri time-series.
+\newblock {\em Magnetic resonance in medicine}, 35(3):346--355, 1996.
+
+\bibitem{larsen2009granulomatous}
+L.~J.~H. Larsen, B.~Peyvandi, N.~Klipfel, E.~Grant, and G.~Iyengar.
+\newblock Granulomatous lobular mastitis: imaging, diagnosis, and treatment.
+\newblock {\em American Journal of Roentgenology}, 193(2):574--581, 2009.
+
+\bibitem{leung1990ct}
+A.~N. Leung, N.~M{\"u}ller, and R.~R. Miller.
+\newblock Ct in differential diagnosis of diffuse pleural disease.
+\newblock {\em AJR. American journal of roentgenology}, 154(3):487--492, 1990.
+
+\bibitem{newburger2004diagnosis}
+J.~W. Newburger, M.~Takahashi, M.~A. Gerber, M.~H. Gewitz, L.~Y. Tani, J.~C.
+  Burns, S.~T. Shulman, A.~F. Bolger, P.~Ferrieri, R.~S. Baltimore, et~al.
+\newblock Diagnosis, treatment, and long-term management of kawasaki disease.
+\newblock {\em Circulation}, 110(17):2747--2771, 2004.
 
 \bibitem{ogawa1990brain}
 S.~Ogawa, T.-M. Lee, A.~R. Kay, and D.~W. Tank.
@@ -13,5 +58,10 @@ F.~S. Pasquini.
   dinâmicas e transferência de entropia}.
 \newblock PhD thesis, São Carlos : Escola de Engenharia de São Carlos,
   Universidade de São Paulo, 2017.
+
+\bibitem{zarahn1997empirical}
+E.~Zarahn, G.~K. Aguirre, and M.~D'Esposito.
+\newblock Empirical analyses of bold fmri statistics.
+\newblock {\em NeuroImage}, 5(3):179--197, 1997.
 
 \end{thebibliography}

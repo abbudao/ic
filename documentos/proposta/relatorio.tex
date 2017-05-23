@@ -7,16 +7,18 @@
 \usepackage{graphicx}
 \usepackage{cite}
 \usepackage{url}
+\usepackage{booktabs}
 \usepackage{geometry}
+\usepackage{pifont}
 \usepackage{tikz}
 \begin{document}
 \input{capa.tex}
 \titleGP
 \newpage
 \section*{Introdução}
-A humanidade está permanentemente em busca dos detalhes do funcionamento do cérebro humano. Para auxiliar nesta difícil tarefa, diversas técnicas de Neuroimagiologia\footnote{e.g.\ Eletroencefalografia (\emph{EEG}), Tomografia por emissão de positrões (\emph{PET}), et al.\ } foram desenvolvidas no último século, possibilitando diagnósticos rápidos e precisos até mesmo de doenças incomuns.
+A humanidade está permanentemente em busca dos detalhes do funcionamento do cérebro humano. Para auxiliar nesta difícil tarefa, diversas técnicas de Neuroimagiologia\footnote{e.g.\ Eletroencefalografia (\emph{EEG}), Tomografia por emissão de positrões (\emph{PET}), et al.\ } foram desenvolvidas no último século, possibilitando diagnósticos rápidos e precisos até mesmo de doenças incomuns \cite{larsen2009granulomatous} \cite{leung1990ct} \cite{newburger2004diagnosis}.
 
-As técnicas de Neuroimagiologia são divididas em duas categorias; técnicas estruturais e técnicas funcionais. As técnicas estruturais têm como objetivo definir a estrutura do sistema nervoso e o diagnóstico de doenças intracranianas de larga escala. Para isso contam com uma elevada resolução espacial, porém possuem uma baixa resolução temporal. No caso das técnicas funcionais, estas são mais adequadas para o estudo cognitivo do cérebro pois contém uma alta resolução temporal, ao custo de uma resolução espacial mais baixa.
+As técnicas de Neuroimagiologia são divididas em duas categorias; técnicas estruturais e técnicas funcionais. As técnicas estruturais têm como objetivo definir a estrutura do sistema nervoso e o diagnóstico de doenças intracranianas de larga escala. Para isso contam com uma elevada resolução espacial, porém possuem uma baixa resolução temporal. No caso das técnicas funcionais, estas são mais adequadas para o estudo cognitivo do cérebro pois contém uma alta resolução temporal, ao custo de uma resolução espacial mais baixa \cite{faro2010bold}.
 
 
 Nas últimas duas décadas, uma técnica funcional não invasiva em específico têm se tornado predominante em estudos cognitivos por apresentar um ótimo balanço entre resolução espacial e resolução temporal; a Ressonância Magnética Funcional ou em inglês, Functional Magnetic Resonance Imaging (\emph{fMRI}). 
@@ -27,20 +29,53 @@ Nas últimas duas décadas, uma técnica funcional não invasiva em específico 
   \label{fig:1}
 \end{figure}
 
-Descoberta por Seiji Ogawa \cite{ogawa1990brain}, a variação mais comum da técnica, chamada BOLD fMRI, consiste em medir a razão entre hemoglobinas oxigenadas e desoxigenadas ao longo de um período. Essa medida é relevante pois está atrelada ao consumo metabólico dos neurônios, um efeito colateral da ativação dos mesmos que se deseja estudar. Dividimos então o cérebro em diminutas unidades de volumes, chamadas de \emph{voxels}, e estudamos como varia este sinal ao longo do tempo, o que nos resulta em um problema de análise de múltiplas séries no tempo.
+Descoberta por Seiji Ogawa \cite{ogawa1990brain}, a variação mais comum da técnica, chamada BOLD fMRI, consiste em medir a razão entre hemoglobinas oxigenadas e desoxigenadas ao longo de um período. Essa medida é relevante pois está atrelada ao consumo metabólico dos neurônios, um efeito colateral da ativação dos mesmos que se deseja estudar. Dividimos então o cérebro em diminutas unidades de volumes, chamadas de \emph{voxels}, e estudamos como varia este sinal ao longo do tempo, o que nos resulta em um problema de análise de múltiplas séries no tempo \cite{friston1996movement} .
 
-Tipicamente, em um experimento deseja-se inferir algo ou testar certa hipótese. A abordagem mais natural é realizar o experimento comparando um estado de repouso e um estado que supostamente provoca a ativação de interesse, possibilitando a análise de como e em quais voxels o sinal varia, prosseguindo com cautela ao encontrar inferências estatísticas que refutam ou apoiam a hipótese que deseja-se testar.
+Tipicamente, em um experimento deseja-se inferir algo ou testar certa hipótese. A abordagem mais natural é realizar o experimento comparando um estado de repouso e um estado que supostamente provoca a ativação de interesse \cite{cabeza2000imaging}, possibilitando a análise de como e em quais voxels o sinal varia, prosseguindo com cautela ao encontrar inferências estatísticas que refutam ou apoiam a hipótese que deseja-se testar \cite{zarahn1997empirical}.
 
-Após a amostragem das séries no tempo de cada \emph{voxel}, é possível reconstruir imagens que sugerem a ativação de certas partes do cérebro. É possível, também, fazer uso de técnicas estruturais, com alta resolução espacial, para localizar e rotular subcampos do cérebro antes de realizar a análise. A preparação, execução e processamento do experimento exige profisisonais dos mais diversos campos do conhecimento como Psicólogos, Médicos e Engenheiros, entre outros, assim como pessoas com múltiplas \emph{expertises} que consiga conectar estes diversos campos. A fim facilitar a realização da análise, propõe-se a criação de um software capaz de reconstruir estas imagens de forma eficiente e acessível, de modo que possibilite que uma multitude de profissionais, mesmo sem conhecimento na área de computação, consiga fazer parte ativa da consolidação e análise destes dados.
+Após a amostragem das séries no tempo de cada \emph{voxel}, é possível reconstruir imagens que sugerem a ativação de certas partes do cérebro \cite{bullmore2009complex}. É possível, também, fazer uso de técnicas estruturais, com alta resolução espacial, para localizar e rotular subcampos do cérebro antes de realizar a análise \cite{cox2003functional}. A preparação, execução e processamento do experimento exige profisisonais dos mais diversos campos do conhecimento como Psicólogos, Médicos e Engenheiros, entre outros, assim como pessoas com múltiplas \emph{expertises} que consiga conectar estes diversos campos. A fim facilitar a realização da análise, propõe-se a criação de um software capaz de reconstruir estas imagens de forma eficiente e acessível, de modo que possibilite que uma multitude de profissionais, mesmo sem conhecimento na área de computação, consiga fazer parte ativa da consolidação e análise destes dados.
 
 \section*{Materiais e Métodos}
 
+
 O LPS, Laboratório de Processamento de Sinais, localizado na Escola de Engenharia de São Carlos (Universidade de São Paulo), firmou uma parceria com a University de Pittsburgh, Pensilvânia, para um estudo que envolvia \emph{fMRI}; o estudo modela a conectividade dos subcampos do Hippocampo com Redes Bayesianas, um modelo probabilístico usado para traçar inferências acerca de incertezas. Tal parceria culminou na tese de Doutorado do (agora) Doutor Fernando Santos Pasquini \cite{Santos2017}. Planeja-se utilizar os dados coletados no projeto mencionado para construir e validar o programa de reconstrução de imagens.
+\begin{table}[ht]
+  \centering
+  \caption{Cronograma do Projeto}
+  \label{tab:1}
+  \scalebox{0.8}{
+\begin{tabular}{l c c c c c c c c c c}\toprule
+  \multicolumn{1}{c}{Planejamento} \multicolumn{11}{c}{Mês}\\
+     \cmidrule{2-11}
+  & Ago & Set & Out & Nov & Dez & Jan & Fev & Mar & Jun & Jul
+\\
+\midrule
+Coleta de especificações& \ding{52} &  &  &  &  &  &  & &  & \\ \midrule
+Desenvolvimento algoritmos de reconstrução& \ding{52} & \ding{52} & \ding{52} & & & & & & & \\ \midrule
+Desenvolvimento algoritmos de análise&  &  & \ding{52} & \ding{52} & \ding{52} & & & & & \\ \midrule
+Desenvolvimento interface gráfica& & & & & & \ding{52} & \ding{52} & & & \\\midrule
+Depuração e correção do código& & & & & & & \ding{52} &  & & \\\midrule
+Validação dos resultados & & & & & & & \ding{52} & \ding{52} & & \\\midrule
+Redação da discussão dos resultados & & & & & & & &\ding{52} & \ding{52}  & \\\midrule
+Formatação e conclusão do artigo& & & & & & & & & \ding{52} & \ding{52}\\ \bottomrule
+\end{tabular}
+}
+\end{table}
 
-A linguagem de programação escolhida para o projeto foi Python, pois possibilita uma prototipação rápida, assim como possuí uma vasta gama de repositórios e pacotes para análise de dados.
-
+A linguagem de programação escolhida para o projeto foi Python, pois possibilita uma prototipação rápida, assim como possuí uma vasta gama de repositórios e pacotes para análise de dados. O projeto foi divido em algumas fases de desenvolvimento, conforme descrito na tabela \ref{tab:1}:
+\begin{description}
+  \item [Coleta de especificações] Consiste em analisar minunciosamente todos os requisitos que serão englobados pela aplicação e os possíveis problemas que estes podem ocasionar. A partir daí traça-se a melhor estratégia para o desenvolvimento do software. 
+  \item [Desenvolvimento algoritmos de reconstrução] Implementação de todos os algoritmos de reconstrução de imagens que irão ser inclusos na aplicação final.
+  \item [Desenvolvimento algoritmos de análise] Implementação dos algoritmos que auxiliarão o usuário a traçar inferências estatísticas que refutam ou corroboram com a hipótese que deseja-se testar.
+  \item [Desenvolvimento interface gráfica] Construir uma camada gráfica que engloba os algoritmos desenvolvidos anteriormente de modo que seja de fácil acesso e intuitivo ao usuário final.
+  \item [Depuração e correção do código] Análise, refatoração e \emph{debugging} do código para que o mesmo esteja menos sucetível a falhas. A refatoração é importante para que a manutenção do código seja menos custosa.
+  \item [Validação dos resultados] Utilizando-se dos dados coletados na pesquisa \cite{Santos2017}, será feito a validação do programa, comparando os resultados esperados com os resultados obtidos. 
+  \item [Redação da discussão dos resultados] Documentação e justificativa dos resultados obtidos desta pesquisa.
+  \item [Formatação e conclusão do artigo]  Transformar toda a documentação e justificativas obtidas em um artigo que explique de forma coesa todos os resultados obtidos. Além do artigo, também será entregue um manual de utilização do programa.
+\end{description}
 \section*{Resultados esperados}
 Desenvolver um software robusto para reconstrução de imagens de \emph{fMRI} que contenha uma interface gráfica simples e intuitiva. Tal aplicação almeja ser um \emph{framework} para desenvolvimento de análise de dados \emph{fMRI} que facilite e possibilite a conclusão a cerca da validade de inferências sobre hipóteses traçadas.
+
 
 \bibliographystyle{abbrv}
 \bibliography{refs}
